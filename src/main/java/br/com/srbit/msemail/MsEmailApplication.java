@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableKafka
 @SpringBootApplication
 public class MsEmailApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(MsEmailApplication.class, args);
     }

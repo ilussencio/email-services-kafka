@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+    <p>Ola, <span th:text="${nome}">Nome do cliente</span> segue detalhes da sua reserva!</p>
+    <p><b>Carro</b></p>
+    <p>Marca: <span th:text="${marca}">Detalhe</span></p>
+    <p>Modelo: <span th:text="${modelo}">Detalhe</span></p>
+    <p>Placa: <span th:text="${placa}">Detalhe</span></p>
+
+
+
+    <p><b>Reserva</b></p>
+    <p>Data: <span th:text="${data}">Detalhe</span></p>
+    <p>Dias: <span th:text="${qtdDias}">Detalhe</span></p>
+    <p>Valor total: <span th:text="${valor}">Detalhe</span> R$</p>
+
+    <p>Obrigado pela confiança!</p>
+</body>
+</html>
