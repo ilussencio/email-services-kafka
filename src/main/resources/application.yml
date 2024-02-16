@@ -1,19 +1,43 @@
 spring:
+  application:
+    name: ms-email
+  data:
+    mongodb:
+      port: 27017
+      host: localhost
+      database: ms-email
+      username: admin
+      password: admin
+      authentication-database: admin
   kafka:
     bootstrap-servers: 127.0.0.1:9092
   mail:
-    host: sandbox.smtp.mailtrap.io
+    host: smtp.gmail.com
     port: 587
-    username: ${EMAIL_USERNAME}
-    password: ${EMAIL_PASSWORD}
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
     properties:
       mail:
         smtp:
           auth: true
           starttls:
-            enabled: true
+            enable: true
 
 server:
-  port: 8081
+  port: ${PORT:0}
   servlet:
     context-path: "/api/v1"
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+logging:
+  level:
+    br:
+      com:
+        srbit:
+          msemail: TRACE

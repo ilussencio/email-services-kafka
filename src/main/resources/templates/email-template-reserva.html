@@ -1,19 +1,45 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.w3.org/1999/xhtml">
+<style>
+    body{
+        font-family: Arial, sans-serif;
+    }
+    .container{
+        width: 80%;
+        margin: 0 auto;
+    }
+    .cabecalho{
+        background-color: #aca8a8;
+        padding: 20px;
+        text-align: center;
+    }
+</style>
 <body>
-    <p>Ola, <span th:text="${nome}">Nome do cliente</span> segue detalhes da sua reserva!</p>
-    <p><b>Carro</b></p>
-    <p>Marca: <span th:text="${marca}">Detalhe</span></p>
-    <p>Modelo: <span th:text="${modelo}">Detalhe</span></p>
-    <p>Placa: <span th:text="${placa}">Detalhe</span></p>
+    <div class="container">
+        <div class="cabecalho">
+            <h1>Reserva de carro</h1>
+        </div>
+        <p>Olá, <span th:text="${nome}">Lucas Ilussencio da Silva</span> segue detalhes da sua reserva!</p>
+        <div>
+            <h2>Carro:</h2>
+            <ul>
+                <li>Marca: <span th:text="${marca}">VolksWagen</span></li>
 
+                <li>Modelo: <span th:text="${modelo}">Gol G6</span></li>
+                <li>Placa: <span th:text="${placa}">OXG-8212</span></li>
+            </ul>
+        </div>
 
+        <div>
+            <h2>Reserva:</h2>
+            <ul>
+                <li>Data: <span th:text="${data}">Detalhes</span></li>
+                <li>Dias: <span th:text="${qtdDias}">VolksWagen</span></li>
+                <li>Valor total: R$ <span th:text="${valor}">150.00</span></li>
+            </ul>
+        </div>
 
-    <p><b>Reserva</b></p>
-    <p>Data: <span th:text="${data}">Detalhe</span></p>
-    <p>Dias: <span th:text="${qtdDias}">Detalhe</span></p>
-    <p>Valor total: <span th:text="${valor}">Detalhe</span> R$</p>
-
-    <p>Obrigado pela confiança!</p>
+        <p>Obrigado pela confiança!</p>
+    </div>
 </body>
 </html>
